@@ -16,3 +16,8 @@ tasks:
     desc: Setup elixir phoenix poker game
     cmds:
       - mix phx.gen.live Games Game games title:string pot:integer
+
+  srv:
+    desc: Run server
+    cmds:
+      - mix phx.server

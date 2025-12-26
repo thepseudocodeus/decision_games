@@ -24,6 +24,7 @@ defmodule PokerUiWeb.Router do
 
     live "/games/:id", GameLive.Show, :show
     live "/games/:id/show/edit", GameLive.Show, :edit
+    live "/poker", PokerLive
   end
 
   # Other scopes may use custom stacks.

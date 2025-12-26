@@ -7,7 +7,7 @@ defmodule PokerUiWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_poker_ui_key",
-    signing_salt: "e29sEO4v",
+    signing_salt: "D6ML0lJo",
     same_site: "Lax"
   ]
 
@@ -31,6 +31,7 @@ defmodule PokerUiWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :poker_ui
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,

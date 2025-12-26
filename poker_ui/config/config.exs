@@ -8,7 +8,8 @@
 import Config
 
 config :poker_ui,
-  generators: [timestamp_type: :utc_datetime]
+  ecto_repos: [PokerUi.Repo],
+  generators: [timestamp_type: :utc_datetime, binary_id: true]
 
 # Configures the endpoint
 config :poker_ui, PokerUiWeb.Endpoint,
@@ -19,16 +20,7 @@ config :poker_ui, PokerUiWeb.Endpoint,
     layout: false
   ],
   pubsub_server: PokerUi.PubSub,
-  live_view: [signing_salt: "CZJUm3mR"]
-
-# Configures the mailer
-#
-# By default it uses the "Local" adapter which stores the emails
-# locally. You can see the emails in your browser, at "/dev/mailbox".
-#
-# For production it's recommended to configure a different adapter
-# at the `config/runtime.exs`.
-config :poker_ui, PokerUi.Mailer, adapter: Swoosh.Adapters.Local
+  live_view: [signing_salt: "q+qwOLbo"]
 
 # Configure esbuild (the version is required)
 config :esbuild,

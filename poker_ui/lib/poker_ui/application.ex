@@ -9,10 +9,9 @@ defmodule PokerUi.Application do
   def start(_type, _args) do
     children = [
       PokerUiWeb.Telemetry,
+      PokerUi.Repo,
       {DNSCluster, query: Application.get_env(:poker_ui, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: PokerUi.PubSub},
-      # Start the Finch HTTP client for sending emails
-      {Finch, name: PokerUi.Finch},
       # Start a worker by calling: PokerUi.Worker.start_link(arg)
       # {PokerUi.Worker, arg},
       # Start to serve requests, typically the last entry

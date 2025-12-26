@@ -42,8 +42,6 @@ defmodule PokerUiWeb do
         formats: [:html, :json],
         layouts: [html: PokerUiWeb.Layouts]
 
-      use Gettext, backend: PokerUiWeb.Gettext
-
       import Plug.Conn
 
       unquote(verified_routes())
@@ -82,9 +80,6 @@ defmodule PokerUiWeb do
 
   defp html_helpers do
     quote do
-      # Translation
-      use Gettext, backend: PokerUiWeb.Gettext
-
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components

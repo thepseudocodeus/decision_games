@@ -16,3 +16,15 @@ tasks:
     desc: Convert png to svg
     cmds:
       - bash scripts/png_to_svg_simple.sh
+
+  make-poker:
+    desc: Make poker ui simple
+    cmds:
+      - mix phx.new poker_ui --binary-id --no-mailer --no-gettext
+
+  fix-postgres:
+    desc: Overcome postgres not available errors on Mac
+    cmds:
+      - brew services start postgresql@18
+      - brew services restart postgresql@18
+      - /opt/homebrew/opt/postgresql@18/bin/createuser -s postgres

@@ -12,8 +12,7 @@ tasks:
       - task -a
     silent: true
 
-  srv:
-    desc: Run elixir server
+  setup-game:
+    desc: Setup elixir phoenix poker game
     cmds:
-      - mix phx.server
-    silent: false
+      - mix phx.gen.live Games Game games title:string pot:integer

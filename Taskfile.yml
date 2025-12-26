@@ -1,0 +1,18 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    desc: Show tasks
+    cmds:
+      - task -a
+    silent: true
+
+  convert-png:
+    desc: Convert png to svg
+    cmds:
+      - bash scripts/png_to_svg_simple.sh

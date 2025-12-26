@@ -1,0 +1,19 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    desc: Show tasks
+    cmds:
+      - task -a
+    silent: true
+
+  srv:
+    desc: Run elixir server
+    cmds:
+      - mix phx.server
+    silent: false
